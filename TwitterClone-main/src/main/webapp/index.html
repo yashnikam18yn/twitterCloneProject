@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+<!-- BS 5.3 -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<!-- Icons -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Custom JS -->
+<link rel="stylesheet" href="./styles.css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+	rel="stylesheet">
+
+<!-- Custom JS -->
+
+</head>
+
+<body>
+
+	<!-- java -jar h2-2.2.224.jar -->
+	<div class="container">
+		<ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button onClick="tweetList()" class="nav-link" id="feed-tab"
+					data-bs-toggle="tab" data-bs-target="#feed-tab-pane" type="button"
+					role="tab" aria-controls="feed-tab-pane" aria-selected="false"
+					disabled>Feed</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button  class="nav-link" id="profile-tab" data-bs-toggle="tab"
+					data-bs-target="#profile-tab-pane" type="button" role="tab"
+					aria-controls="profile-tab-pane" aria-selected="false" disabled>Profile</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button onClick="myTweets()" class="nav-link" id="my-tweets-tab"
+					data-bs-toggle="tab" data-bs-target="#my-tweets-tab-pane"
+					type="button" role="tab" aria-controls="my-tweets-tab-pane"
+					aria-selected="false" disabled>My Tweets</button>
+			</li>
+			<li class="nav-item ms-auto" role="presentation">
+				<button class="nav-link active" id="sign-in-tab"
+					data-bs-toggle="tab" data-bs-target="#sign-in-tab-pane"
+					type="button" role="tab" aria-controls="sign-in-tab-pane"
+					aria-selected="true">Sign In</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="sign-up-tab" data-bs-toggle="tab"
+					data-bs-target="#sign-up-tab-pane" type="button" role="tab"
+					aria-controls="sign-up-tab-pane" aria-selected="false">Sign
+					Up</button>
+			</li>
+		</ul>
+
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade" id="feed-tab-pane" role="tabpanel"
+				aria-labelledby="feed-tab" tabindex="0">
+				FEED HERE
+
+
+				<!-- ADD TWEET START -->
+				<div class="tweet-input-container p-4 bg-light rounded shadow-sm">
+					<div class="mb-3">
+						<label for="tweetinput" class="form-label">Write Tweet</label>
+						<textarea class="form-control" id="tweetinput" rows="3"
+							placeholder="What's on your mind?"></textarea>
+					</div>
+					<div class="d-grid">
+						<button type="button" class="btn btn-primary btn-lg"
+							onclick="addNewTweet()">Tweet</button>
+					</div>
+					<hr class="my-4">
+				</div>
+				<!-- ADD TWEET END -->
+
+				<!-- TWEET LIST START -->
+				<div>
+					<ul id="tweetsList" class="list-group">
+
+					</ul>
+
+				</div>
+				<!-- TWEET LIST END -->
+
+
+
+			</div>
+			<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+				aria-labelledby="profile-tab" tabindex="0">
+				PROFILE HERE
+
+				<!-- Profile Start -->
+
+				<section class="vh-100" style="background-color: #f4f5f7;">
+					<div class="container py-5 h-100">
+						<div
+							class="row d-flex justify-content-center align-items-center h-100">
+							<div class="col col-lg-6 mb-4 mb-lg-0">
+								<div class="card mb-3" style="border-radius: .5rem;">
+									<div class="row g-0">
+										<div class="col-md-4 gradient-custom text-center text-white"
+											style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+											<img
+												src="https://static.javatpoint.com/biography/images/ronaldo.png"
+												alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+											<h5 style="color: black;">Yash Nikam</h5>
+											<p style="color: black;">Focus on whats important</p>
+											<i class="far fa-edit mb-5"></i>
+										</div>
+										<div class="col-md-8">
+											<div class="card-body p-4">
+												<h6>Profile</h6>
+												<hr class="mt-0 mb-4">
+												<div class="row pt-1">
+													<div class="col-6 mb-3">
+														<h6>Email</h6>
+														<p class="text-muted">yashnikam@gmail.com</p>
+													</div>
+													<div class="col-6 mb-3">
+														<h6>Phone</h6>
+														<p class="text-muted">123 456 789</p>
+													</div>
+												</div>
+												<h6>Projects</h6>
+												<hr class="mt-0 mb-4">
+												<div class="row pt-1">
+													<div class="col-6 mb-3">
+														<h6>Recent</h6>
+														<p class="text-muted">King</p>
+													</div>
+													<div class="col-6 mb-3">
+														<h6>Most Viewed</h6>
+														<p class="text-muted">-----</p>
+													</div>
+												</div>
+												<div class="d-flex justify-content-start">
+													<a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+													
+													<a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Profile END -->
+
+
+
+			</div>
+			<div class="tab-pane fade" id="my-tweets-tab-pane" role="tabpanel"
+				aria-labelledby="my-tweets-tab" tabindex="0">
+				MY TWEETS HERE
+				<ul id="mytweet" class="list-group">
+
+				</ul>
+			</div>
+			<div class="tab-pane fade show active" id="sign-in-tab-pane"
+				role="tabpanel" aria-labelledby="sign-in-tab" tabindex="0">
+
+
+				<!-- Login Start -->
+
+				
+				<div class="container mt-5">
+				
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+        <h3>Login Page</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="useremaillogin" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="userpasswordlogin">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" onclick="SignIn()" class="btn btn-primary btn-block">Login</button>
+        </div>
+    </div>
+</div>
+
+
+				<!-- Login End -->
+
+
+
+			</div>
+			<div class="tab-pane fade" id="sign-up-tab-pane" role="tabpanel"
+				aria-labelledby="sign-up-tab" tabindex="0">
+
+				<!-- Sign Up Start -->
+
+
+				<div class="container mt-5">
+    <h3>Sign Up</h3>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">UserName</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Name Here">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="useremail" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Enter Password</label>
+                <input type="password" class="form-control" id="userpassword" placeholder="">
+            </div>
+            <div class="mb-3">
+                <button type="button" id="btnsignup" onclick="SignUp()" class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+				<!-- Sign Up End -->
+
+			</div>
+		</div>
+	</div>
+	<!-- BS JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+
+	<script src="./logic.js"></script>
+</body>
+
+</html>
